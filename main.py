@@ -20,7 +20,7 @@ def make_pie_chart(filename):
     data['time'] = data['time'].apply(lambda x: int(x)/3600)
 
     plt.figure()
-    plt.pie(data['time'], labels=data['Author'], autopct=slice_value)
+    plt.bar(height=data['time'], x=data['Author'])
     plt.title('Heures travaillées par personne')
     plt.savefig(join(dirname(__file__), f'pie_chart_{datetime.datetime.now().date()}.png'), format='png')
 
